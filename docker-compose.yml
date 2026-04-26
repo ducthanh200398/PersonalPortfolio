@@ -1,0 +1,65 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: portfolio-backend
+
+    environment:
+      - SERVER_PORT=8080
+      - SERVER_HOST=localhost
+      - SERVER_READ_TIMEOUT=30s
+      - SERVER_WRITE_TIMEOUT=30s
+      - DATA_FOLDER=./data/portfolio.toml
+    volumes:
+      - ./backend/data:/root/data
+    restart: unless-stopped
+    networks:
+      - portfolio-network
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: portfolio-frontend
+    expose:
+      - "3000"
+    environment:
+      - NODE_ENV=production
+      - NEXT_PUBLIC_API_URL=http://backend:8080
+    depends_on:
+      - backend
+    restart: unless-stopped
+    networks:
+      - portfolio-network
+
+  nginx:
+    image: nginx:1.25-alpine
+    container_name: portfolio-proxy
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./data/nginx/conf.d:/etc/nginx/conf.d:ro
+      - ./data/certbot/conf:/etc/letsencrypt:ro
+      - ./data/certbot/www:/var/www/certbot:ro
+    restart: unless-stopped
+    networks:
+      - portfolio-network
+
+  certbot:
+    image: certbot/certbot
+    container_name: portfolio-certbot
+    volumes:
+      - ./data/certbot/conf:/etc/letsencrypt
+      - ./data/certbot/www:/var/www/certbot
+    # Lệnh này kiểm tra và tự động gia hạn mỗi 12 tiếng
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
+    networks:
+      - portfolio-network
+
+networks:
+  portfolio-network:
+    driver: bridge

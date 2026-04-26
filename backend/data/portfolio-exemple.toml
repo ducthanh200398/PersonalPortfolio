@@ -1,0 +1,69 @@
+# --- CORE IDENTITY ---
+[user]
+full_name = "Nguyen Van A"
+job_title = "Backend Developer"
+location = "Hanoi, Vietnam"
+email = "contact@example.com"
+github = "https://github.com/yourusername"
+linkedin = "https://linkedin.com/in/yourprofile"
+
+# --- PROFESSIONAL SUMMARY ---
+[profile]
+summary = "Backend Engineer with 4+ years of experience specializing in distributed systems, high-performance Go microservices, and system architecture."
+
+# --- TECHNICAL EXPERTISE ---
+# Organized by groups for easy rendering in the UI
+[[skills]]
+category = "Languages & Frameworks"
+list = ["Golang (Gin, fx)", "Python (FastAPI)", "JavaScript (Node.js)"]
+
+[[skills]]
+category = "Databases & Storage"
+list = ["PostgreSQL", "Redis", "Elasticsearch", "MongoDB"]
+
+[[skills]]
+category = "Infrastructure & Tools"
+list = ["Docker", "Kubernetes", "Google Cloud", "SaltStack", "WebSockets"]
+
+# --- WORK HISTORY ---
+[[experience]]
+role = "Senior Backend Engineer"
+company = "Tech Solutions Corp"
+period = "2023 - Present"
+description = "Designed and implemented a centralized management system for enterprise firewall devices."
+highlights = [
+    "Architected a Master-Minion system supporting 1,000+ active nodes.",
+    "Integrated a web-based terminal with real-time SSH via WebSockets.",
+    "Improved system efficiency, reducing CPU overhead by 40%."
+]
+
+[[experience]]
+role = "Backend Developer"
+company = "Fintech Startup"
+period = "2021 - 2023"
+description = "Built scalable microservices for e-commerce and payment processing."
+highlights = [
+    "Applied Clean Architecture principles to ensure long-term maintainability.",
+    "Streamlined CI/CD pipelines, increasing deployment frequency by 50%."
+]
+
+# --- ACADEMIC & CERTIFICATIONS ---
+# Note: Using "Undergraduate Studies" or "Coursework" to be transparent
+[[education]]
+institution = "Hanoi University of Science and Technology"
+focus = "Information Technology (Undergraduate Studies)"
+period = "2015 - 2019"
+details = "Focused on Operating Systems, Networking, and Database Management."
+
+[[education]]
+institution = "Google / Coursera"
+focus = "Cloud Architecture Professional Certificate"
+period = "2024"
+details = "Specialized in designing resilient systems on Google Cloud Platform."
+
+# --- FEATURED PROJECTS ---
+[[projects]]
+name = "Bluepam"
+tech_stack = ["Go", "React", "WebSocket"]
+description = "A high-performance web-based terminal and SSH integration tool."
+link = "https://github.com/example/bluepam"

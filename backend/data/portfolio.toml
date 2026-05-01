@@ -1,0 +1,64 @@
+# --- THÔNG TIN CÁ NHÂN ---
+[User]
+FullName = "Phạm Đức Thành"
+JobTitle = "Senior Backend Go Engineer"
+TechTags = ["Go", "PostgreSQL", "Redis", "Kubernetes", "Kafka"]
+Location = "Hoang Mai, Hanoi, Vietnam"
+Email    = "duc.thanh200398@gmail.com"
+LinkedIn = "https://linkedin.com/in/pdt123"
+GitHub   = "https://github.com/pdt123"
+
+
+[SkillProfile]
+Description = "5+ years of experience building scalable backend systems, microservices, and security-focused applications."
+
+[[SkillProfile.SkillGroups]]
+Title  = "Backend & Languages"
+Skills = ["Go (Gin, uber-go/fx)", "Python (Flask, FastAPI, Celery)", "Dart"]
+Icon   = "code"
+
+[[SkillProfile.SkillGroups]]
+Title  = "Databases"
+Skills = ["PostgreSQL", "MySQL", "MongoDB", "Elasticsearch"]
+Icon   = "database"
+
+[[SkillProfile.SkillGroups]]
+Title  = "Infrastructure"
+Skills = ["Docker", "Kubernetes", "MinIO", "Google Cloud"]
+Icon   = "cloud"
+
+[[SkillProfile.SkillGroups]]
+Title  = "Security & Auth"
+Skills = ["Active Directory", "Hashicorp", "Ory Kratos", "Casdoor", "IAM Integration"]
+Icon   = "shield"
+
+
+[ExperienceProfile]
+Description = "Building secure, scalable backend systems for enterprise clients and cybersecurity solutions."
+
+[[ExperienceProfile.Experiences]]
+Role        = "Backend Developer"
+Company     = "NMS - New Generation Mobile Services JSC"
+Period      = "Aug 2024 - Aug 2025"
+Description = "Developing microservices and backend solutions for enterprise applications."
+Highlights  = [
+    "Backend developer for Cloudrity - DDoS protection and WAF solution for Viettel Cyber Security",
+    "Designed database architecture and API development for microservices",
+    "PIC for User Service in electric bike rental platform with 20+ team members"
+]
+
+[[ExperienceProfile.Experiences]]
+Role        = "Backend & Fullstack Developer"
+Company     = "FOSEC - Information Security JSC"
+Period      = "Aug 2020 - Aug 2024"
+Description = "Built security-focused applications and enterprise solutions for major Vietnamese enterprises."
+Highlights  = [
+    "Developed BluePAM - Enterprise Privileged Access Management solution",
+    "Integrated Active Directory and implemented SSO user management",
+    "Built firewall central management with WebSocket and TCP socket communication"
+]
+
+[[EducationProfile.Educations]]
+Organization = "Management Information Systems"
+Major        = "Information Systems Management"
+Description  = "Studied information systems management, database systems, and software development fundamentals. GPA: 3.05/4.0."

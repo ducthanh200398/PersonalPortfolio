@@ -1,7 +1,7 @@
 # Backend Dockerfile
 FROM golang:1.21-alpine AS builder
 
-WORKDIR /app/backend
+WORKDIR /portfolio/backend
 
 # Copy go mod files
 COPY go.mod go.sum ./
@@ -18,13 +18,13 @@ FROM alpine:latest
 
 RUN apk --no-cache add ca-certificates
 
-WORKDIR /root/
+WORKDIR /portfolio/backend
 
 # Copy the binary from builder
-COPY --from=builder /app/main .
+COPY --from=builder /portfolio/backend/main .
 
 # Copy data folder
-COPY --from=builder /app/data ./data
+COPY --from=builder /portfolio/backend/data ./data
 
 EXPOSE 8080
 

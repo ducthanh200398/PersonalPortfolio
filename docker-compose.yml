@@ -35,30 +35,7 @@ services:
     networks:
       - portfolio-network
 
-  nginx:
-    image: nginx:1.25-alpine
-    container_name: portfolio-proxy
-    ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      - ./data/nginx/conf.d:/etc/nginx/conf.d:ro
-      - ./data/certbot/conf:/etc/letsencrypt:ro
-      - ./data/certbot/www:/var/www/certbot:ro
-    restart: unless-stopped
-    networks:
-      - portfolio-network
 
-  certbot:
-    image: certbot/certbot
-    container_name: portfolio-certbot
-    volumes:
-      - ./data/certbot/conf:/etc/letsencrypt
-      - ./data/certbot/www:/var/www/certbot
-    # Lệnh này kiểm tra và tự động gia hạn mỗi 12 tiếng
-    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
-    networks:
-      - portfolio-network
 
 networks:
   portfolio-network:

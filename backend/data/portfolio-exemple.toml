@@ -1,69 +1,68 @@
-# --- CORE IDENTITY ---
-[user]
-full_name = "Nguyen Van A"
-job_title = "Backend Developer"
-location = "Hanoi, Vietnam"
-email = "contact@example.com"
-github = "https://github.com/yourusername"
-linkedin = "https://linkedin.com/in/yourprofile"
+# --- GENERAL USER INFORMATION ---
+[User]
+FullName = "Alex Developer"
+JobTitle = "Senior Software Engineer"
+TechTags = ["Language", "Database", "Cloud", "Tool"]
+Location = "City, Country"
+Email = "alex.dev@example.com"
+LinkedIn = "https://www.linkedin.com/in/alexdev"
+GitHub = "https://github.com/alexdev"
+Facebook = "https://www.facebook.com/alexdev"
 
-# --- PROFESSIONAL SUMMARY ---
-[profile]
-summary = "Backend Engineer with 4+ years of experience specializing in distributed systems, high-performance Go microservices, and system architecture."
+# --- SKILLS AND EXPERTISE ---
+[SkillProfile]
+Description = "A brief professional summary of your core strengths and years of experience."
 
-# --- TECHNICAL EXPERTISE ---
-# Organized by groups for easy rendering in the UI
-[[skills]]
-category = "Languages & Frameworks"
-list = ["Golang (Gin, fx)", "Python (FastAPI)", "JavaScript (Node.js)"]
+[[SkillProfile.SkillGroups]]
+Title = "Programming Languages"
+Skills = ["Skill 1", "Skill 2", "Skill 3"]
+Icon = "cloud"
 
-[[skills]]
-category = "Databases & Storage"
-list = ["PostgreSQL", "Redis", "Elasticsearch", "MongoDB"]
+[[SkillProfile.SkillGroups]]
+Title = "Frameworks & Tools"
+Skills = ["Framework A", "Tool B", "Library C"]
+Icon = "cloud"
 
-[[skills]]
-category = "Infrastructure & Tools"
-list = ["Docker", "Kubernetes", "Google Cloud", "SaltStack", "WebSockets"]
+[[SkillProfile.SkillGroups]]
+Title = "Infrastructure"
+Skills = ["Cloud Platform", "Containerization", "CI/CD"]
+Icon = "cloud"
 
-# --- WORK HISTORY ---
-[[experience]]
-role = "Senior Backend Engineer"
-company = "Tech Solutions Corp"
-period = "2023 - Present"
-description = "Designed and implemented a centralized management system for enterprise firewall devices."
-highlights = [
-    "Architected a Master-Minion system supporting 1,000+ active nodes.",
-    "Integrated a web-based terminal with real-time SSH via WebSockets.",
-    "Improved system efficiency, reducing CPU overhead by 40%."
+# --- PROFESSIONAL EXPERIENCE ---
+[ExperienceProfile]
+Description = "Overview of your career path and the types of systems you have built."
+
+[[ExperienceProfile.Experiences]]
+Role = "Your Job Title"
+Company = "Company Name"
+Period = "Start Date - End Date"
+Description = "General description of your responsibilities at this company."
+Highlights = [
+    "Key achievement or major responsibility 1",
+    "Successful project delivery or metric improvement",
+    "Team leadership or technical contribution"
 ]
 
-[[experience]]
-role = "Backend Developer"
-company = "Fintech Startup"
-period = "2021 - 2023"
-description = "Built scalable microservices for e-commerce and payment processing."
-highlights = [
-    "Applied Clean Architecture principles to ensure long-term maintainability.",
-    "Streamlined CI/CD pipelines, increasing deployment frequency by 50%."
+# --- ACADEMIC BACKGROUND ---
+[EducationProfile]
+[[EducationProfile.Educations]]
+Organization = "University Name"
+Major = "Field of Study"
+Description = "Details about your degree, relevant coursework, and academic honors or GPA"
+
+# --- TECHNICAL PROJECTS ---
+[ProjectsProfile]
+Description = "Highlights of the most significant projects you have worked on"
+
+[[ProjectsProfile.Projects]]
+Title = "Project Title"
+Subtitle = "Project Category/Niche"
+Client = "Organization or Open Source"
+Icon = "star"
+Description = "Clear explanation of the project's purpose and your specific role"
+Technologies = ["Tech 1", "Tech 2", "Tech 3"]
+Highlights = [
+    "Design and implementation detail",
+    "Performance optimization or scaling solution",
+    "Integration with third-party services"
 ]
-
-# --- ACADEMIC & CERTIFICATIONS ---
-# Note: Using "Undergraduate Studies" or "Coursework" to be transparent
-[[education]]
-institution = "Hanoi University of Science and Technology"
-focus = "Information Technology (Undergraduate Studies)"
-period = "2015 - 2019"
-details = "Focused on Operating Systems, Networking, and Database Management."
-
-[[education]]
-institution = "Google / Coursera"
-focus = "Cloud Architecture Professional Certificate"
-period = "2024"
-details = "Specialized in designing resilient systems on Google Cloud Platform."
-
-# --- FEATURED PROJECTS ---
-[[projects]]
-name = "Bluepam"
-tech_stack = ["Go", "React", "WebSocket"]
-description = "A high-performance web-based terminal and SSH integration tool."
-link = "https://github.com/example/bluepam"

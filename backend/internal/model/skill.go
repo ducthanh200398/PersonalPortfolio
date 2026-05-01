@@ -1,12 +1,12 @@
 package model
 
 type SkillProfile struct {
-	Description string
-	SkillGroups []SkillGroup
+	Description string       `toml:"Description"`
+	SkillGroups []SkillGroup `toml:"SkillGroups"`
 }
 
 type SkillGroup struct {
-	Title  string
-	Skills []string
-	Icon   string
+	Title  string   `toml:"Title"`
+	Skills []string `toml:"Skills"`
+	Icon   string   `toml:"Icon"`
 }

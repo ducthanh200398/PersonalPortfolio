@@ -6,6 +6,7 @@ export interface UserProfile {
   Email: string;
   LinkedIn: string;
   GitHub: string;
+  Facebook: string;
 }
 
 export interface SkillGroup {
@@ -42,11 +43,27 @@ export interface EducationProfile {
   Educations: Education[];
 }
 
+export interface Project {
+  Title: string;
+  Subtitle: string;
+  Client: string;
+  Icon: string;
+  Description: string;
+  Technologies: string[];
+  Highlights: string[];
+}
+
+export interface ProjectsProfile {
+  Description: string;
+  Projects: Project[];
+}
+
 export interface PortfolioProfile {
   UserProfile: UserProfile;
   SkillProfile: SkillProfile;
   ExperienceProfile: ExperienceProfile;
   EducationProfile: EducationProfile;
+  ProjectsProfile: ProjectsProfile;
 }
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8080";

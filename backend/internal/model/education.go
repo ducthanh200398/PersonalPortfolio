@@ -1,11 +1,11 @@
 package model
 
 type EducationProfile struct {
-	Educations []Education
+	Educations []Education `toml:"Educations"`
 }
 
 type Education struct {
-	Organization string
-	Major        string
-	Description  string
+	Organization string `toml:"Organization"`
+	Major        string `toml:"Major"`
+	Description  string `toml:"Description"`
 }

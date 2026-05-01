@@ -1,8 +1,18 @@
 "use client";
 
 import { GraduationCap, Award } from "lucide-react";
+import { usePortfolio } from "@/context/PortfolioContext";
 
 export function Education() {
+  const { data, loading } = usePortfolio();
+  const educationProfile = data?.EducationProfile;
+
+  if (loading) {
+    return null;
+  }
+
+  const educations = educationProfile?.Educations || [];
+
   return (
     <section id="education" className="py-24">
       <div className="container mx-auto px-6">
@@ -16,27 +26,29 @@ export function Education() {
           </h2>
         </div>
 
-        {/* Education card */}
-        <div className="max-w-2xl mx-auto">
-          <div className="p-8 rounded-xl bg-card border border-border">
-            <div className="flex items-start gap-4">
-              <div className="p-3 rounded-lg bg-primary/10 text-primary shrink-0">
-                <GraduationCap className="w-6 h-6" />
-              </div>
-              <div>
-                <h3 className="font-semibold text-xl text-foreground mb-1">
-                  Banking Academy of Vietnam
-                </h3>
-                <p className="text-primary mb-2">
-                  Management Information Systems
-                </p>
+        {/* Education cards */}
+        <div className="max-w-2xl mx-auto space-y-4">
+          {educations.map((edu, index) => (
+            <div key={index} className="p-8 rounded-xl bg-card border border-border">
+              <div className="flex items-start gap-4">
+                <div className="p-3 rounded-lg bg-primary/10 text-primary shrink-0">
+                  <GraduationCap className="w-6 h-6" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-xl text-foreground mb-1">
+                    {edu.Organization}
+                  </h3>
+                  <p className="text-primary mb-2">
+                    {edu.Major}
+                  </p>
 
-                <p className="text-muted-foreground text-sm">
-                  Undergraduate Studies in Management Information Systems.
-                </p>
+                  <p className="text-muted-foreground text-sm">
+                    {edu.Description}
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

@@ -2,47 +2,54 @@
 
 import { Mail, MessageCircle, MapPin, Github, Linkedin, Facebook } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-const contactInfo = [
-  {
-    icon: Mail,
-    label: "Email",
-    value: "duc.thanh200398@gmail.com",
-    href: "mailto:duc.thanh200398@gmail.com",
-  },
-  {
-    icon: MessageCircle,
-    label: "Zalo",
-    value: "0357 575 566",
-    href: "https://zalo.me/0357575566",
-  },
-  {
-    icon: MapPin,
-    label: "Location",
-    value: "Hoang Mai, Hanoi, Vietnam",
-    href: null,
-  },
-];
-
-const socialLinks = [
-  {
-    icon: Github,
-    label: "GitHub",
-    href: "https://github.com",
-  },
-  {
-    icon: Linkedin,
-    label: "LinkedIn",
-    href: "https://linkedin.com",
-  },
-  {
-    icon: Facebook,
-    label: "Facebook",
-    href: "https://www.facebook.com/ducthanh200398",
-  },
-];
+import { usePortfolio } from "@/context/PortfolioContext";
 
 export function Contact() {
+  const { data, loading } = usePortfolio();
+  const userProfile = data?.UserProfile;
+
+  const contactInfo = [
+    {
+      icon: Mail,
+      label: "Email",
+      value: userProfile?.Email,
+      href: userProfile?.Email ? `mailto:${userProfile.Email}` : undefined,
+    },
+    {
+      icon: MessageCircle,
+      label: "Zalo",
+      value: "0357 575 566",
+      href: "https://zalo.me/0357575566",
+    },
+    {
+      icon: MapPin,
+      label: "Location",
+      value: userProfile?.Location,
+      href: null,
+    },
+  ];
+
+  const socialLinks = [
+    {
+      icon: Github,
+      label: "GitHub",
+      href: userProfile?.GitHub,
+    },
+    {
+      icon: Linkedin,
+      label: "LinkedIn",
+      href: userProfile?.LinkedIn,
+    },
+    {
+      icon: Facebook,
+      label: "Facebook",
+      href: userProfile?.Facebook,
+    },
+  ];
+
+  if (loading) {
+    return null;
+  }
   return (
     <section id="contact" className="py-24 bg-secondary/30">
       <div className="container mx-auto px-6">

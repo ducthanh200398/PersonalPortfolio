@@ -1,9 +1,23 @@
 "use client";
 
-import { Mail, MapPin, Github, Linkedin } from "lucide-react";
+import { Mail, MapPin, Github, Linkedin, Facebook } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { usePortfolio } from "@/context/PortfolioContext";
 
 export function Hero() {
+  const { data, loading } = usePortfolio();
+  const user = data?.UserProfile;
+
+  if (loading) {
+    return null;
+  }
+
+  const fullName = user?.FullName || "";
+  const nameParts = fullName.split(" ");
+  const firstName = nameParts.slice(0, -1).join(" ");
+  const lastName = nameParts[nameParts.length - 1];
+  const techTags = user?.TechTags || [];
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background gradient */}
@@ -33,17 +47,17 @@ export function Hero() {
 
         {/* Name and title */}
         <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-4">
-          <span className="text-foreground">Pham Duc</span>{" "}
-          <span className="text-primary">Thanh</span>
+          <span className="text-foreground">{firstName}</span>{" "}
+          <span className="text-primary">{lastName}</span>
         </h1>
 
         <p className="text-xl md:text-2xl text-muted-foreground mb-6">
-          Senior Backend Go Engineer
+          {user?.JobTitle}
         </p>
 
         {/* Tech stack pills */}
         <div className="flex flex-wrap justify-center gap-2 mb-8">
-          {["Go", "PostgreSQL", "Redis", "Kubernetes", "Kafka"].map((tech) => (
+          {techTags.map((tech) => (
             <span
               key={tech}
               className="px-3 py-1 text-sm rounded-md bg-secondary border border-border text-foreground"
@@ -56,7 +70,7 @@ export function Hero() {
         {/* Location */}
         <div className="flex items-center justify-center gap-2 text-muted-foreground mb-8">
           <MapPin className="w-4 h-4" />
-          <span>Hanoi, Vietnam</span>
+          <span>{user?.Location}</span>
         </div>
 
         {/* CTA buttons */}
@@ -65,7 +79,7 @@ export function Hero() {
             asChild
             className="bg-primary text-primary-foreground hover:bg-primary/90"
           >
-            <a href="mailto:duc.thanh200398@gmail.com">
+            <a href={user?.Email ? `mailto:${user.Email}` : undefined}>
               <Mail className="w-4 h-4 mr-2" />
               Get in Touch
             </a>
@@ -76,7 +90,7 @@ export function Hero() {
             className="border-border hover:bg-secondary"
           >
             <a
-              href="https://github.com"
+              href={user?.GitHub}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -90,12 +104,26 @@ export function Hero() {
             className="border-border hover:bg-secondary"
           >
             <a
-              href="https://linkedin.com"
+              href={user?.LinkedIn}
               target="_blank"
               rel="noopener noreferrer"
             >
               <Linkedin className="w-4 h-4 mr-2" />
               LinkedIn
+            </a>
+          </Button>
+          <Button
+            variant="outline"
+            asChild
+            className="border-border hover:bg-secondary"
+          >
+            <a
+              href={user?.Facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Facebook className="w-4 h-4 mr-2" />
+              Facebook
             </a>
           </Button>
         </div>

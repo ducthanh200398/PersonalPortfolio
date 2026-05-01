@@ -37,4 +37,4 @@ services:
 
 networks:
   portfolio-network:
-    driver: bridge
+    name: portfolio-network

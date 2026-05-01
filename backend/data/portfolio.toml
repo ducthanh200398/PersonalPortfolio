@@ -2,63 +2,164 @@
 [User]
 FullName = "Phạm Đức Thành"
 JobTitle = "Senior Backend Go Engineer"
-TechTags = ["Go", "PostgreSQL", "Redis", "Kubernetes", "Kafka"]
+TechTags = ["Go", "Mongo db", "PostgreSQL", "Redis", "Kafka", "Rabbitmq", "docker", "Kubernetes"]
 Location = "Hoang Mai, Hanoi, Vietnam"
-Email    = "duc.thanh200398@gmail.com"
-LinkedIn = "https://linkedin.com/in/pdt123"
-GitHub   = "https://github.com/pdt123"
+Email = "duc.thanh200398@gmail.com"
+LinkedIn = "https://www.linkedin.com/in/thanhp200398"
+GitHub = "https://github.com/ducthanh200398"
+Facebook = "https://www.facebook.com/ducthanh200398"
 
 
 [SkillProfile]
-Description = "5+ years of experience building scalable backend systems, microservices, and security-focused applications."
+Description = "Backend Developer with over 5 years of experience specializing in Golang and Python. Proven track record in building high-throughput systems, microservices architecture, and security-focused solutions (PAM, WAF). Expertise in designing scalable APIs, integrating real-time communication via WebSockets/gRPC, and managing complex database environments"
 
 [[SkillProfile.SkillGroups]]
-Title  = "Backend & Languages"
-Skills = ["Go (Gin, uber-go/fx)", "Python (Flask, FastAPI, Celery)", "Dart"]
-Icon   = "code"
+Title = "Languages"
+Skills = ["Go (Golang)", "Python", "Dart", "Javascript"]
+Icon = "code"
 
 [[SkillProfile.SkillGroups]]
-Title  = "Databases"
+Title = "Frameworks & Libraries"
+Skills = ["Gin", "Fiber", "Echo", "Flask", "FastAPI", "Celery", "Flutter", "Angular", "Nextjs"]
+Icon = "code"
+
+[[SkillProfile.SkillGroups]]
+Title = "Data Management & Storage"
 Skills = ["PostgreSQL", "MySQL", "MongoDB", "Elasticsearch"]
-Icon   = "database"
+Icon = "database"
 
 [[SkillProfile.SkillGroups]]
-Title  = "Infrastructure"
-Skills = ["Docker", "Kubernetes", "MinIO", "Google Cloud"]
-Icon   = "cloud"
+Title = "Infrastructure & Tools"
+Skills = ["Docker", "Kubernetes", "MinIO", "Kafka", "Rabbitmq", "Firebase"]
+Icon = "cloud"
 
 [[SkillProfile.SkillGroups]]
-Title  = "Security & Auth"
+Title = "Security & Auth"
 Skills = ["Active Directory", "Hashicorp", "Ory Kratos", "Casdoor", "IAM Integration"]
-Icon   = "shield"
+Icon = "shield"
+
+[[SkillProfile.SkillGroups]]
+Title = "Specialties"
+Skills = ["Microservices", "WebSocket/TCP Sockets", "Network Security"]
+Icon = "shield"
 
 
 [ExperienceProfile]
-Description = "Building secure, scalable backend systems for enterprise clients and cybersecurity solutions."
+Description = "Building secure, scalable backend systems for enterprise clients and cybersecurity solutions"
 
 [[ExperienceProfile.Experiences]]
-Role        = "Backend Developer"
-Company     = "NMS - New Generation Mobile Services JSC"
-Period      = "Aug 2024 - Aug 2025"
-Description = "Developing microservices and backend solutions for enterprise applications."
-Highlights  = [
+Role = "Backend Developer"
+Company = "HRI - International Human Resources Joint Stock Company"
+Period = "Oct 2024 - Jan 2026"
+Description = "Developing microservices and backend solutions for enterprise applications"
+Highlights = [
+    "Collaborated as a key Backend Developer for high-impact mobility projects",
+    "Responsible for designing scalable microservices architecture and managing database integrity",
+    "Acted as the main Point of Contact (PIC) for user-centric services in large-scale deployments",
+]
+
+[[ExperienceProfile.Experiences]]
+Role = "Backend Developer"
+Company = "NMS - New Generation Mobile Services JSC"
+Period = "Aug 2024 - Aug 2025"
+Description = "Developing microservices and backend solutions for enterprise applications"
+Highlights = [
     "Backend developer for Cloudrity - DDoS protection and WAF solution for Viettel Cyber Security",
     "Designed database architecture and API development for microservices",
     "PIC for User Service in electric bike rental platform with 20+ team members"
 ]
 
 [[ExperienceProfile.Experiences]]
-Role        = "Backend & Fullstack Developer"
-Company     = "FOSEC - Information Security JSC"
-Period      = "Aug 2020 - Aug 2024"
-Description = "Built security-focused applications and enterprise solutions for major Vietnamese enterprises."
-Highlights  = [
+Role = "Fullstack Developer"
+Company = "FOSEC - Information Security JSC"
+Period = "Aug 2020 - Aug 2024"
+Description = "Built security-focused applications and enterprise solutions for major Vietnamese enterprises"
+Highlights = [
     "Developed BluePAM - Enterprise Privileged Access Management solution",
     "Integrated Active Directory and implemented SSO user management",
     "Built firewall central management with WebSocket and TCP socket communication"
 ]
 
+
+[[ExperienceProfile.Experiences]]
+Role = "Intern Backend Developer"
+Company = "FSS - Financial Software Solutions"
+Period = "Dec 2019 - Apr 2020"
+Description = "Data processing and backend development with Python and PostgreSQL"
+Highlights = [
+    "Processed and analyzed data using Python",
+    "Worked with PostgreSQL databases",
+]
+
 [[EducationProfile.Educations]]
 Organization = "Management Information Systems"
-Major        = "Information Systems Management"
-Description  = "Studied information systems management, database systems, and software development fundamentals. GPA: 3.05/4.0."
+Major = "Information Systems Management"
+Description = "Studied information systems management, database systems, and software development fundamentals. GPA: 3.05/4.0"
+
+[ProjectsProfile]
+Description = "Enterprise-grade solutions for cybersecurity, fintech, and large-scale applications"
+
+[[ProjectsProfile.Projects]]
+Title = "Bike Rental Platform"
+Subtitle = "Electric Vehicle Rental"
+Client = "Vinsmart Future"
+Icon = "bike"
+Description = "Large-scale electric bike rental application with 20+ team members, focusing on user service architecture and database design"
+Technologies = ["Go", "Redis", "PostgreSQL"]
+Highlights = ["Designed the overall system architecture and database schema for the User Service", "Developed core APIs for electric motorbike rental management", "Optimized performance using Redis caching and PostgreSQL"]
+
+[[ProjectsProfile.Projects]]
+Title = "Cloudrity"
+Subtitle = "DDoS Protection & WAF"
+Client = "Viettel Cyber Security"
+Icon = "server"
+Description = "Website protection application with DDoS attack prevention, WAF rules, rate limiting, and comprehensive security features"
+Technologies = ["Go", "Redis", "MongoDB", "Elasticsearch", "Pusher", "Casdoor"]
+Highlights = ["Developed microservices for WAF rules, rate limiting, and whitelist/blacklist management", "Implemented an audit log service using Elasticsearch", "Integrated IAM for centralized identity and access management"]
+
+
+
+[[ProjectsProfile.Projects]]
+Title = "BluePAM"
+Subtitle = "Privileged Access Management"
+Client = "Viettel Cyber Security"
+Icon = "shield"
+Description = "Enterprise PAM solution for SSH, RDP, web, and database access management with security risk prevention and certificate management"
+Technologies = ["Go", "Gin", "uber-go/fx", "PostgreSQL", "Redis", "Hashicorp", "Active Directory", "Elasticsearch"]
+Highlights = ["Remote access to SSH servers", "User management with SSO", "Active Directory integration"]
+
+
+[[ProjectsProfile.Projects]]
+Title = "Firewall & Central Management"
+Subtitle = "Enterprise Security Solution"
+Client = ""
+Icon = "shield"
+Description = "Firewall software and hardware solution with centralized server management for enterprise security needs"
+Technologies = ["Go", "Python", "Flask", "Celery", "Angular", "Redis"]
+Highlights = ["Whitelist/blacklist features in Go", "WebSocket and TCP socket communication", "Centralized server development"]
+
+[[ProjectsProfile.Projects]]
+Title = "Finez"
+Subtitle = "Financial Management App"
+Icon = "wallet"
+Description = "Simple and secure personal finance management application with mobile and microservices architecture"
+Technologies = ["Go", "Gin", "uber-go/fx", "Flutter", "PostgreSQL", "Redis", "Ory Kratos"]
+Highlights = ["User service microservice development", "Mobile app with Flutter", "Secure authentication with Ory Kratos"]
+
+[[ProjectsProfile.Projects]]
+Title = "HCT.VN"
+Subtitle = "Commodity Trading Platform"
+Client = "Ho Chi Minh City Commodity Exchange"
+Icon = "globe"
+Description = "ERP website with CRM modules and customer management for commodity trading operations"
+Technologies = ["Python", "Odoo", "PostgreSQL", "XML", "CSS"]
+Highlights = ["CRM and customer management modules", "Frontend development for main website"]
+
+[[ProjectsProfile.Projects]]
+Title = "School ERP"
+Subtitle = "Examination & Attendance Management"
+Client = "Ho Chi Minh City Commodity Exchange"
+Icon = "globe"
+Description = "ERP website, comprehensive school management system featuring automated attendance and remote exam monitoring"
+Technologies = ["Python", "Odoo", "PostgreSQL", "XML", "CSS", "Flask", "FastAPI", "Celery", "Flutter", "Angular", "MongoDB", "WebSockets", "TensorFlow", "MinIO"]
+Highlights = ["Developed a face-recognition processing server and a Flutter mobile app for automated student check-ins", "Built real-time monitoring features using WebSockets to capture and transmit exam session photos for violation detection", "Synchronized all educational data and violation logs with the Odoo ERP system using Celery and RESTful APIs"]
